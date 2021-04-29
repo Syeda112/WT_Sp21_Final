@@ -1,7 +1,9 @@
 <?php
 
-    include "models/db_config.php";
+    require_once "controllers/studentRegistrationController.php";
     include "Header.php";
+    require_once "js/reg.js";
+    //require "js/ajax.js"; 
 
 ?>
 
@@ -9,7 +11,7 @@
    
 <h1>Student Registration</h1>
 
-<form action="controllers/studentRegistrationController.php" method="POST">
+<form action="" method="POST" onsubmit="return validate()" >
 
 <label for="fullName" class = "form-control">Full Name:</label>
 <input type="text" id="Name" name="name" class = "form-control">
@@ -69,6 +71,23 @@
 <button class="btn btn-primary" type="submit" name="submit" id="Submit">Submit</button>
 
 </form>
+
+<div class = "text-center">
+
+    <h3 id = "err_name"></h3>
+    <h3 id = "err_ClassName"></h3>
+    <h3 id = "err_Subject"></h3>
+    <h3 id = "err_School"></h3>
+    <h3 id = "err_email"></h3>
+    <h3 id = "err_MobileNumber"></h3>
+    <h3 id = "err_Studentgender"></h3>
+    <h3 id = "err_Teachergender"></h3>
+    <h3 id = "err_DOB"></h3>
+    <h3 id = "err_StudentAddress"></h3>
+    <h3 id = "success"></h3>
+</div>
+
+<script src="js/ajax.js"></script>
 
 </body>
 
